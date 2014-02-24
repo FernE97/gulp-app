@@ -57,6 +57,30 @@ var config = {
 
 
 /**
+ * Browser Sync
+ **********************************************************/
+
+gulp.task('browser-sync', function() {
+
+    // If server host is not set run a static-server
+    if (config.serverHost == '') {
+        browserSync.init(['css/*.css', 'js/*.js'], {
+            server: {
+                baseDir: '../'
+            }
+        });
+    } else {
+        browserSync.init(['css/*.css', 'js/*.js'], {
+            proxy: {
+                host: config.serverHost
+            }
+        });
+    }
+
+});
+
+
+/**
  * Sass Tasks
  **********************************************************/
 
@@ -139,20 +163,6 @@ gulp.task('images', function() {
             .pipe(gulp.dest(paths.webpDest));
     }
 
-});
-
-
-/**
- * Browser Sync
- **********************************************************/
-
-gulp.task('browser-sync', function() {
-    if (config.serverHost == '') return;
-    browserSync.init(['css/*.css', 'js/*.js'], {
-        proxy: {
-            host: config.serverHost
-        }
-    });
 });
 
 
