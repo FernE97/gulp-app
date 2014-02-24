@@ -13,6 +13,7 @@ npm install -g gulp
 ```
 
 **cd into the assets folder of your project directory**
+
 *Replace `gulp-app` with your actual project path*
 
 ```zsh
