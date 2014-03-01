@@ -9,7 +9,7 @@
 - [image-min](https://www.npmjs.org/package/gulp-imagemin)
 - [WebP](https://developers.google.com/speed/webp/)
 
-*As well as a few others to minify and conacatenate css and js*
+*As well as a few others to minify and concatenate css and js*
 
 ### Setup Instructions
 
