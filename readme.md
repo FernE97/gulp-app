@@ -29,10 +29,18 @@ npm install -g gulp
 cd gulp-app/assets
 ```
 
+*All commands below should be run from inside the assets directory*
+
 **Run `npm update` to install the gulp dependencies**
 
 ```zsh
 npm update
+```
+
+**Rename `custom-config-sample.js` to `custom-config.js` and add any needed settings**
+
+```zsh
+mv custom-config-sample.js custom-config.js
 ```
 
 **Run `gulp` to start the default gulp tasks**
