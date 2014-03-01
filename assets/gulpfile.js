@@ -48,11 +48,22 @@ var gulp = require('gulp'),
  * Config
  **********************************************************/
 
+/**
+ * custom-config.js is used to store configuration settings
+ * that shouldn't be kept in sync with everyone else. This
+ * file is ignored by git.
+ */
+
+var customConfig = require('./custom-config'),
+    tinypngApiKey = customConfig.tinypngApiKey,
+    serverHost = customConfig.serverHost,
+    serverPort = customConfig.serverPort;
+
 var config = {
-    serverHost : '',
-    serverPort : '',
+    serverHost : serverHost,
+    serverPort : serverPort,
     webpEnable : false,
-    tinypngApiKey : '' // https://tinypng.com/developers
+    tinypng : tinypngApiKey // https://tinypng.com/developers
 };
 
 
@@ -64,7 +75,7 @@ gulp.task('browser-sync', function() {
 
     // If server host is not set run a static-server
     if (config.serverHost == '') {
-        browserSync.init(['css/*.css', 'js/*.js'], {
+        browserSync.init(['css/*.css', 'js/*.js', '*.html'], {
             server: {
                 baseDir: '../'
             }
@@ -143,10 +154,10 @@ gulp.task('images', function() {
         .pipe(gulp.dest(paths.imgDest));
 
     // Use TinyPNG if API Key is entered otherwise use ImageMin
-    if (config.tinypngApiKey != '') {
+    if (config.tinypng != '') {
         gulp.src(paths.pngSrc)
             .pipe(changed(paths.imgDest))
-            .pipe(tinypng(config.tinypngApiKey))
+            .pipe(tinypng(config.tinypng))
             .pipe(gulp.dest(paths.imgDest));
     } else {
         gulp.src(paths.pngSrc)

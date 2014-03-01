@@ -1,6 +1,15 @@
-## gulp.js starter app
+## [gulp.js](http://gulpjs.com/) starter template
 
-Starter framework for [gulp.js](http://gulpjs.com/) & [BrowserSync](http://www.browsersync.io/)
+### Uses gulp plugins for
+- [Sass](http://sass-lang.com/) with option for [Compass](http://compass-style.org/)
+- [Autoprefixer](https://github.com/ai/autoprefixer)
+- [BrowserSync](http://www.browsersync.io/)
+- [JSHint](http://jshint.com/)
+- [TinyPNG](https://tinypng.com/)
+- [image-min](https://www.npmjs.org/package/gulp-imagemin)
+- [WebP](https://developers.google.com/speed/webp/)
+
+*As well as a few others to minify and conacatenate css and js*
 
 ### Setup Instructions
 
@@ -12,7 +21,7 @@ If you don't have node.js installed grab the installer at [nodejs.org](http://no
 npm install -g gulp
 ```
 
-**cd into the assets folder of your project directory**
+**cd into the `assets` folder of your project directory**
 
 *Replace `gulp-app` with your actual project path*
 
@@ -20,7 +29,7 @@ npm install -g gulp
 cd gulp-app/assets
 ```
 
-**Run `npm update` to install `node_modules`**
+**Run `npm update` to install the gulp dependencies**
 
 ```zsh
 npm update
